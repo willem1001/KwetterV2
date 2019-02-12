@@ -40,8 +40,9 @@ public abstract class Postable {
         if(likes.contains(user)) {
            likes.remove(user);
             user.removeLike(this);
+        } else {
+            likes.add(user);
         }
-        likes.add(user);
     }
 
     public void addReaction(Reaction reaction) {
