@@ -1,4 +1,4 @@
-package com.stas.DAL.Data;
+package com.stas.DAO;
 
 import com.stas.Models.Tweet.Postable;
 import com.stas.Models.Tweet.Reaction;
@@ -14,5 +14,5 @@ public interface IPostable {
     public Postable searchPost(String query);
     public List<Postable> getAll();
     public List<Postable> getAll(int count);
-    public Postable editPost(Postable postable);
+    public void editPost(Postable post);
 }

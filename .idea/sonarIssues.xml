@@ -3,6 +3,11 @@
   <component name="issues">
     <option name="index">
       <map>
+        <entry key="/Dummy.txt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="/a.dummy">
           <value>
             <set />
@@ -49,6 +54,31 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/main/java/com/stas/DAL/Repositories/UserRepository.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/stas/DAO/Data/IPostable.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/stas/DAO/Data/IUser.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/stas/DAO/IPostable.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/stas/DAO/IUser.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/stas/DAO/PostableImpl.java">
           <value>
             <set />
           </value>

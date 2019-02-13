@@ -6,21 +6,36 @@ import com.stas.Models.Tweet.Postable;
 import com.stas.Models.Tweet.Reaction;
 import com.stas.Models.Tweet.Tweet;
 
+import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * The type User.
  */
+
+@Table(name = "user")
+@Entity
+@NamedQueries({
+        @NamedQuery(name = "User.getAll", query = "SELECT u FROM User u"),
+        @NamedQuery(name = "User.get", query = "SELECT u FROM User u")
+})
 public abstract class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String userName;
     private String bio;
-    private ArrayList<User> following = new ArrayList<User>();
-    private ArrayList<User> followers = new ArrayList<User>();
+    @OneToMany
+    private List<User> following = new ArrayList<User>();
+    @OneToMany
+    private List<User> followers;
     private String location;
     private String profilePicture;
-    private ArrayList<Postable> postsLiked = new ArrayList<Postable>();
-    private ArrayList<Postable> createdPosts = new ArrayList<Postable>();
+    @OneToMany
+    private List<Postable> postsLiked = new ArrayList<Postable>();
+    @OneToMany
+    private List<Postable> createdPosts = new ArrayList<Postable>();
     private String password;
     private Role role;
     private String website;
@@ -35,6 +50,8 @@ public abstract class User {
         this.userName = userName;
         this.password = password;
     }
+
+    public User () {}
 
 
     /**
@@ -150,7 +167,7 @@ public abstract class User {
      * @return the following
      */
     public ArrayList<User> getFollowing() {
-        return following;
+        return (ArrayList<User>) following;
     }
 
     /**
@@ -168,7 +185,7 @@ public abstract class User {
      * @return the followers
      */
     public ArrayList<User> getFollowers() {
-        return followers;
+        return (ArrayList<User>) followers;
     }
 
     /**
@@ -276,7 +293,7 @@ public abstract class User {
      * @return the posts liked
      */
     public ArrayList<Postable> getPostsLiked() {
-        return postsLiked;
+        return (ArrayList<Postable>) postsLiked;
     }
 
     /**
@@ -294,7 +311,7 @@ public abstract class User {
      * @return the created posts
      */
     public ArrayList<Postable> getCreatedPosts() {
-        return createdPosts;
+        return (ArrayList<Postable>) createdPosts;
     }
 
     /**

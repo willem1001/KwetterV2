@@ -1,4 +1,4 @@
-package com.stas.DAL.Data;
+package com.stas.DAO;
 
 import com.stas.Models.User.User;
 import java.util.List;

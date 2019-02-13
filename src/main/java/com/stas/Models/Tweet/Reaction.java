@@ -3,9 +3,14 @@ package com.stas.Models.Tweet;
 import com.stas.Enum.PostType;
 import com.stas.Models.User.User;
 
+import javax.persistence.Entity;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
+
 /**
  * The type Reaction.
  */
+@Entity
 public class Reaction extends Postable {
     private Postable reactedOn;
 

@@ -3,21 +3,38 @@ package com.stas.Models.Tweet;
 import com.stas.Enum.PostType;
 import com.stas.Models.User.User;
 
+import javax.persistence.*;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  * The type Postable.
  */
-public abstract class Postable {
+@Table(name = "t_postable")
+@Entity
+@NamedQueries({
+        @NamedQuery(name = "Reaction.getAll", query = "SELECT p FROM Postable p"),
+        @NamedQuery(name = "Reaction.get", query = "SELECT p FROM Postable p")
+})
+public abstract class Postable implements Serializable {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String content;
-    private ArrayList<Reaction> reactions = new ArrayList<Reaction>();
-    private ArrayList<User> likes = new ArrayList<User>();
+
+    @OneToMany
+    private List<Reaction> reactions = new ArrayList<Reaction>();
+
+    @OneToMany
+    private List<User> likes = new ArrayList<User>();
     private Date date;
+    @OneToOne
     private User creator;
     private PostType postType;
 
+    public Postable() {};
     /**
      * Instantiates a new Postable.
      *
@@ -91,7 +108,7 @@ public abstract class Postable {
      * @return the reactions
      */
     public ArrayList<Reaction> getReactions() {
-        return reactions;
+        return (ArrayList<Reaction>) reactions;
     }
 
     /**
@@ -109,7 +126,7 @@ public abstract class Postable {
      * @return the likes
      */
     public ArrayList<User> getLikes() {
-        return likes;
+        return (ArrayList<User>) likes;
     }
 
     /**

@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module version="4">
+  <component name="FacetManager">
+    <facet type="jpa" name="JPA">
+      <configuration>
+        <setting name="validation-enabled" value="true" />
+        <setting name="provider-name" value="Hibernate" />
+        <datasource-mapping>
+          <factory-entry name="Entities" value="881a8fca-596e-4511-987e-d95a21f280fb" />
+        </datasource-mapping>
+      </configuration>
+    </facet>
+  </component>
   <component name="sonarModuleSettings">
+    <option name="alternativeWorkingDirPath" value="" />
     <option name="localAnalysisScripName" value="&lt;PROJECT&gt;" />
     <option name="serverName" value="&lt;PROJECT&gt;" />
+    <option name="useAlternativeWorkingDir" value="false" />
+    <option name="workingDirSelection" value="&lt;MODULE&gt;" />
   </component>
 </module>
